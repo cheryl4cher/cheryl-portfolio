@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="ja" class="light" style="width: 1434px;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>廖小彬 — 以品牌为起点，用创意与数据连接人心</title>
+    <style id="theme-vars">
+/* ============================================
+   giftee.co.jp 1:1 Restore — Colors & Typography
+   brandPrefix: gf
+   ============================================ */
+
+:root {
+  /* --- Core Surfaces --- */
+  --gf-background: #F5F4F0;       /* sampled: page background, warm cream/off-white */
+  --gf-foreground: #1C1410;       /* sampled: primary text, dark brown near-black */
+  --gf-card: #FFFFFF;             /* sampled: service card backgrounds */
+  --gf-primary: #1C1410;          /* sampled: buttons, headings, nav — dark brown */
+  --gf-border: #E0DED9;           /* sampled: dividers, thin section breaks */
+  --gf-muted: #8B8278;            /* sampled: secondary text, dates, labels */
+
+  /* --- Extended Palette --- */
+  --gf-footer-bg: #1A1A1A;        /* sampled: footer dark background */
+  --gf-footer-text: #FFFFFF;      /* sampled: footer text color */
+  --gf-footer-muted: #8B8B8B;     /* sampled: footer secondary links */
+  --gf-badge-bg: #FCEAE0;         /* sampled: category badge background, light peach */
+  --gf-badge-text: #C2563F;       /* sampled: category badge text, warm coral */
+  --gf-press-badge-bg: #FDF0E8;   /* sampled: press release badge bg, light peach */
+  --gf-press-badge-text: #D4604A; /* sampled: press release badge text */
+  --gf-accent-brown: #3D2817;     /* sampled: heading brown, slightly lighter than body */
+  --gf-nav-bg: #1C1410;           /* sampled: hamburger menu button bg */
+  --gf-overlay: rgba(28,20,16,0.92); /* sampled: mobile menu overlay */
+
+  /* --- Typography --- */
+  --gf-font-sans: 'Noto Sans SC', 'Source Han Sans SC', '思源黑体', sans-serif;
+  --gf-font-serif: 'Noto Sans SC', 'Source Han Sans SC', '思源黑体', sans-serif;
+
+  /* --- Radius --- */
+  --gf-radius-sm: 4px;   /* small elements, badges */
+  --gf-radius-md: 8px;   /* cards, buttons */
+  --gf-radius-lg: 16px;  /* large containers */
+  --gf-radius-full: 9999px; /* circular buttons, pill badges */
+
+  /* --- Shadows --- */
+  --gf-shadow-card: 0 1px 3px rgba(0,0,0,0.04);
+  --gf-shadow-hover: 0 4px 12px rgba(0,0,0,0.08);
+
+  /* --- Spacing --- */
+  --gf-section-padding: 80px;
+  --gf-container-max: 1280px;
+  --gf-container-padding: 40px;
+}
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.1/dist/index.global.js"></script>
+    <script src="https://unpkg.com/lucide@1.8.0/dist/umd/lucide.min.js"></script>
+    <style type="text/tailwindcss">
+  @theme inline {
+    --color-background: var(--gf-background);
+    --color-foreground: var(--gf-foreground);
+    --color-card: var(--gf-card);
+    --color-primary: var(--gf-primary);
+    --color-muted: var(--gf-muted);
+    --color-border: var(--gf-border);
+    --radius-sm: var(--gf-radius-sm);
+    --radius-md: var(--gf-radius-md);
+    --radius-lg: var(--gf-radius-lg);
+  }
+  @layer base {
+    body { background: transparent; color: var(--gf-foreground); position: relative; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      background: url('./assets/bg-texture.jpg') no-repeat center center;
+      background-size: cover;
+      opacity: 0.8;
+      pointer-events: none;
+    }
+    body > * { position: relative; z-index: 1; }
+    td, th { @apply break-words; word-break: break-all; word-break: auto-phrase; }
+    th { @apply whitespace-nowrap; }
+  }
+    </style>
+    <style id="semantic-token-fallback">
+      .bg-background { background-color: var(--gf-background); }
+      .text-background { color: var(--gf-background); }
+      .border-background { border-color: var(--gf-background); }
+      .ring-background { --tw-ring-color: var(--gf-background); }
+      .bg-foreground { background-color: var(--gf-foreground); }
+      .text-foreground { color: var(--gf-foreground); }
+      .border-foreground { border-color: var(--gf-foreground); }
+      .ring-foreground { --tw-ring-color: var(--gf-foreground); }
+      .bg-card { background-color: var(--gf-card); }
+      .text-card { color: var(--gf-card); }
+      .border-card { border-color: var(--gf-card); }
+      .ring-card { --tw-ring-color: var(--gf-card); }
+      .bg-primary { background-color: var(--gf-primary); }
+      .text-primary { color: var(--gf-primary); }
+      .border-primary { border-color: var(--gf-primary); }
+      .ring-primary { --tw-ring-color: var(--gf-primary); }
+      .bg-muted { background-color: var(--gf-muted); }
+      .text-muted { color: var(--gf-muted); }
+      .border-muted { border-color: var(--gf-muted); }
+      .ring-muted { --tw-ring-color: var(--gf-muted); }
+      .bg-border { background-color: var(--gf-border); }
+      .text-border { color: var(--gf-border); }
+      .border-border { border-color: var(--gf-border); }
+      .ring-border { --tw-ring-color: var(--gf-border); }
+    </style>
+    <style>
+      .no-scrollbar::-webkit-scrollbar { display: none; }
+      .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+      [data-icon] {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-position: center;
+        mask-position: center;
+        background-color: currentColor;
+      }
+      /* Image swipe viewer overlay */
+      .img-swipe-overlay {
+        position: fixed; inset: 0; z-index: 9999;
+        background: rgba(0,0,0,0.92);
+        display: none;
+        align-items: center; justify-content: center;
+        flex-direction: column;
+      }
+      .img-swipe-overlay.active { display: flex; }
+      .img-swipe-track {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        width: 100%; max-width: 900px;
+        gap: 0;
+      }
+      .img-swipe-track::-webkit-scrollbar { display: none; }
+      .img-swipe-track { scrollbar-width: none; }
+      .img-swipe-track img {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        max-height: 80vh;
+        object-fit: contain;
+        cursor: zoom-in;
+        transition: transform 0.3s ease;
+      }
+      .img-swipe-track img.zoomed {
+        cursor: zoom-out;
+        transform: scale(2);
+      }
+      .img-swipe-nav {
+        position: absolute; top: 50%; transform: translateY(-50%);
+        width: 48px; height: 48px; border-radius: 50%;
+        background: rgba(255,255,255,0.15); border: none;
+        color: #fff; font-size: 24px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.2s;
+      }
+      .img-swipe-nav:hover { background: rgba(255,255,255,0.3); }
+      .img-swipe-nav.prev { left: 20px; }
+      .img-swipe-nav.next { right: 20px; }
+      .img-swipe-close {
+        position: absolute; top: 20px; right: 20px;
+        width: 40px; height: 40px; border-radius: 50%;
+        background: rgba(255,255,255,0.15); border: none;
+        color: #fff; font-size: 20px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .img-swipe-close:hover { background: rgba(255,255,255,0.3); }
+      .img-swipe-dots {
+        display: flex; gap: 8px; margin-top: 16px;
+      }
+      .img-swipe-dots span {
+        width: 8px; height: 8px; border-radius: 50%;
+        background: rgba(255,255,255,0.3);
+        transition: background 0.2s;
+      }
+      .img-swipe-dots span.active { background: #fff; }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased">
+    <main style="padding-right: 0px;"><section class="relative min-h-screen w-full overflow-hidden" style="background: transparent; height: 600px; width: 1434px;" data-editor-id="editor-node-mski1qt0-1"><div class="absolute bottom-28 left-8 md:left-10 z-10 max-w-[640px]" style="inset: 871.195px auto auto 169.2px; position: absolute; width: 640px; height: 192.552px;" data-editor-id="editor-node-mskhle63-3">
+          
+        <h1 class="text-[17px] md:text-[28px] font-bold leading-[1.2] tracking-tight" style="color: var(--gf-foreground); text-wrap: balance; white-space-collapse: preserve-breaks; width: 940.271px; height: 192.562px; position: relative; left: -80px; top: -600px; letter-spacing: 3px; line-height: 2;" data-editor-id="editor-node-msd38eiw-18" data-vd-editable-host="1">以品牌为起点，用创意与数据
+连接人心。</h1></div>
+        <!-- Header / Navigation -->
+        
+
+        <!-- Hero photograph (center-right ~50%) -->
+        
+        <!-- legibility gradient for small screens -->
+        <header class="absolute top-0 left-0 right-0 z-50 flex justify-between items-start p-8 md:p-10" style="position: absolute; inset: 2.05109px auto auto 6.15266px; width: 1427.81px; height: 818px;" data-editor-id="editor-node-mskhon0n-2">
+          
+          
+        <a href="#" class="text-[20px] font-bold capitalize tracking-tight" style="color: var(--gf-foreground); width: 300px; height: 100px; font-weight: 800; font-family: &quot;Domine&quot;; font-size: 70px;" data-vd-editable-host="1" data-editor-id="editor-node-mskhrs7j-3">Portfolio</a><img src="./assets/mission-people.png" alt="廖小彬" class="w-full h-full object-cover" draggable="false" data-editor-id="editor-node-msd34zyk-1" style="display: flex; justify-content: flex-start; border: 0.666667px solid transparent; left: 80px; position: relative; top: 40px; width: 500px; height: 600px;" data-vd-editable-host="1"><div class="flex flex-col items-end gap-6" data-editor-id="editor-node-msd35t1e-6" style="justify-content: flex-start;">
+            <button aria-label="菜单" class="w-12 h-12 rounded-lg flex flex-col justify-center items-center gap-[5px] shrink-0" style="background: var(--gf-nav-bg);">
+              <span class="block w-5 h-[2px]" style="background: var(--gf-card);"></span>
+              <span class="block w-5 h-[2px]" style="background: var(--gf-card);"></span>
+            </button>
+            <nav class="hidden md:flex flex-col items-end gap-[10px] text-[14px] font-medium" style="color: var(--gf-foreground);">
+              <a href="#mission" class="hover:opacity-60 transition whitespace-nowrap">个人简介</a>
+              <a href="#education" class="hover:opacity-60 transition whitespace-nowrap">教育背景</a>
+              <a href="#business" class="hover:opacity-60 transition whitespace-nowrap">实习经历</a>
+              <a href="#project" class="hover:opacity-60 transition whitespace-nowrap">项目经历</a>
+              <a href="#news" class="hover:opacity-60 transition whitespace-nowrap">作品集</a>
+              
+            <a href="#careers" class="hover:opacity-60 transition whitespace-nowrap" data-editor-id="editor-node-msd3hg5e-5">专业技能</a></nav>
+          </div></header><div class="absolute inset-0 z-[1] md:hidden" style="background: linear-gradient(to bottom, var(--gf-background) 30%, transparent 70%);"></div>
+
+        <!-- Tagline (lower-left) -->
+        
+
+        <!-- Contact card (bottom-right) -->
+        
+      </section>
+      <!-- ============ HERO ============ -->
+      
+
+      <!-- ============ MISSION ============ -->
+      <section id="mission" class="py-20 px-8 md:px-10" style="width: 1440px; height: 796px;">
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-5 gap-10 lg:gap-16 items-center" style="width: 1280px; height: 644px;">
+          <div class="lg:col-span-3 order-2 lg:order-1" style="width: 580.396px; height: 636px;">
+            <img src="./assets/inline-image-0.jpg" alt="个人简介" class="w-full h-[360px] md:h-[560px] object-cover" style="width: 501.396px; height: 646px;">
+          </div>
+          <div class="lg:col-span-2 order-1 lg:order-2" style="position: relative; left: -100px; width: 565.5px; height: 426.542px;">
+            <h2 class="text-[44px] md:text-[56px] font-bold leading-[1.2] tracking-tight" style="color: var(--gf-foreground); text-wrap: balance;">About</h2>
+            <p class="text-[22px] font-semibold mt-2" style="color: var(--gf-accent-brown);">个人简介</p>
+            <p class="text-[16px] leading-[1.8] mt-6 max-w-[440px]" style="color: var(--gf-foreground); width: 700px; height: 154.375px;">中央财经大学新闻与传播硕士研究生，拥有奇思妙想的营销达人。兼具品牌策划、达人营销、舆情监测与AI工具应用能力，致力于将传播洞察与数字技术融合，打造有温度的品牌体验。</p>
+            <a href="#" class="inline-flex items-center justify-center w-14 h-14 rounded-full mt-10" style="background: var(--gf-primary); color: var(--gf-card);"><i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+                      </div>
+        </div>
+      </section>
+
+      <!-- ============ EDUCATION ============ -->
+      <section id="education" class="py-20 px-8 md:px-10" style="height: 800px;">
+        <div class="max-w-[1280px] mx-auto">
+          <div class="mb-12">
+            <h2 class="text-[44px] md:text-[56px] font-bold leading-[1.2] tracking-tight" style="color: var(--gf-foreground); text-wrap: balance;">Education</h2>
+            <p class="text-[22px] font-semibold mt-2" style="color: var(--gf-accent-brown);">教育背景</p>
+          </div>
+
+          <!-- Education cards -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <article class="p-9 rounded-lg flex flex-col" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card);">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                  <span class="inline-flex items-center self-start px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">2025.09-2027.06</span>
+                  <h3 class="text-[24px] font-bold mt-5" style="color: var(--gf-foreground);">中央财经大学</h3>
+                  <p class="text-[15px] font-semibold mt-2" style="color: var(--gf-accent-brown);">新闻与传播 · 硕士研究生</p>
+                </div>
+                <img src="./assets/cufe-logo.png" alt="中央财经大学校徽" class="w-16 h-16 object-contain flex-shrink-0" style="width: 123px; height: 113.167px; flex-grow: 0; flex-basis: auto;">
+              </div>
+              <p class="text-[15px] leading-[1.8] mt-3 flex-1" style="color: var(--gf-muted);">主修课程：品牌战略与广告传播、金融品牌研究、财经传播、传媒经济学等。聚焦品牌传播与财经领域交叉研究。</p>
+            </article>
+
+            <article class="p-9 rounded-lg flex flex-col" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card);">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex-1 min-w-0">
+                  <span class="inline-flex items-center self-start px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">2021.09-2025.06</span>
+                  <h3 class="text-[24px] font-bold mt-5" style="color: var(--gf-foreground);">湖南师范大学</h3>
+                  <p class="text-[15px] font-semibold mt-2" style="color: var(--gf-accent-brown);">文化产业管理 · 本科</p>
+                </div>
+                <img src="./assets/hunnenu-logo.png" alt="湖南师范大学校徽" class="w-16 h-16 object-contain flex-shrink-0" style="width: 116px; height: 113.167px; flex-grow: 0; flex-basis: auto;">
+              </div>
+              <p class="text-[15px] leading-[1.8] mt-3 flex-1" style="color: var(--gf-muted);">GPA 4.32/5，排名2/44（Top5） · 主修课程：市场营销学、文化经济学、文化产业创意与策划等。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ BUSINESS ============ -->
+      <section id="business" class="py-20 px-8 md:px-10" style="background: transparent;">
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <!-- Left: Title -->
+          <div class="lg:col-span-4">
+            <h2 class="text-[44px] md:text-[56px] font-bold leading-[1.2] tracking-tight" style="color: var(--gf-foreground); text-wrap: balance;">Experience</h2>
+            <p class="text-[22px] font-semibold mt-2" style="color: var(--gf-accent-brown);">实习经历</p>
+            <a href="#" class="inline-flex items-center justify-center w-14 h-14 rounded-full mt-10" style="background: var(--gf-primary); color: var(--gf-card);"><i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+          </div>
+
+          <!-- Right: Timeline -->
+          <div class="lg:col-span-8 relative pl-8 md:pl-12">
+            <!-- vertical line -->
+            <div class="absolute left-[7px] md:left-[11px] top-2 bottom-2 w-[2px]" style="background: var(--gf-border);"></div>
+
+            <!-- Entry 1 -->
+            <div class="relative mb-12">
+              <div class="p-7 md:p-9 rounded-lg" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card);">
+                <span class="inline-flex items-center self-start px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">2026.05-2026.08</span>
+                <h3 class="text-[24px] font-bold mt-5" style="color: var(--gf-foreground);">爱德曼国际公关</h3>
+                <p class="text-[15px] font-semibold mt-2" style="color: var(--gf-accent-brown);">科技组实习生</p>
+                <p class="text-[15px] leading-[1.8] mt-3" style="color: var(--gf-muted);">1. 独立负责ITW公众号内容策划与排版，设计"ITW知行录"栏目，Q2实现环比涨粉8%。<br>2. 深度参与惠普商用媒体分享会媒体沟通，统筹10+核心媒体邀约，实现百万级曝光。<br>3. 独立完成惠普、ITW、伟创力等客户全网媒体监测，累计交付20+报告。</p>
+              </div><div class="absolute -left-8 md:-left-12 top-1 w-4 h-4 md:w-6 md:h-6 rounded-full border-[2px] md:border-[3px]" style="background: var(--gf-card); border-color: var(--gf-accent-brown);"></div>
+              
+            </div>
+
+            <!-- Entry 2 -->
+            <div class="relative mb-12">
+              <div class="absolute -left-8 md:-left-12 top-1 w-4 h-4 md:w-6 md:h-6 rounded-full border-[2px] md:border-[3px]" style="background: var(--gf-card); border-color: var(--gf-accent-brown);"></div>
+              <div class="p-7 md:p-9 rounded-lg" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card);">
+                <span class="inline-flex items-center self-start px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">2024.10-2025.02</span>
+                <h3 class="text-[24px] font-bold mt-5" style="color: var(--gf-foreground);">三诺生物</h3>
+                <p class="text-[15px] font-semibold mt-2" style="color: var(--gf-accent-brown);">种草业务实习生</p>
+                <p class="text-[15px] leading-[1.8] mt-3" style="color: var(--gf-muted);">1. 负责小红书平台达人营销，建联10+位垂类KOC，铺量素人笔记30+篇，带动品牌搜索量增长10%。<br>2. 系统分析5+主要竞品（罗氏、鱼跃、微泰等）用户定位与投放打法。<br>3. 优化舆情监测机制，日均处理潜在负面信息20+条。</p>
+              </div>
+            </div>
+
+            <!-- Entry 3 -->
+            <div class="relative">
+              <div class="absolute -left-8 md:-left-12 top-1 w-4 h-4 md:w-6 md:h-6 rounded-full border-[2px] md:border-[3px]" style="background: var(--gf-card); border-color: var(--gf-accent-brown);"></div>
+              <div class="p-7 md:p-9 rounded-lg" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card);">
+                <span class="inline-flex items-center self-start px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">2023.07-2023.09</span>
+                <h3 class="text-[24px] font-bold mt-5" style="color: var(--gf-foreground);">中国广电（湖南） </h3>
+                <p class="text-[15px] font-semibold mt-2" style="color: var(--gf-accent-brown);">品牌创意实习生</p>
+                <p class="text-[15px] leading-[1.8] mt-3" style="color: var(--gf-muted);">1. 策划湖南经视频道《笑哈哈哈》× 中国广电5G品牌植入营销事件，创意设计"嘉宾reaction"互动场景及应援周边。<br>2. 参与中国广电5G × 书亦烧仙草品牌跨界联合营销策划，以青春卡·校园版为切入点策划联名周边及线下二维码营销场景，方案获内部通过。<br>3. 独立完成视频号动态海报设计及品牌活动推文撰写。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ============ PROJECT ============ -->
+      <section id="project" class="py-20 px-8 md:px-10" style="width: 1439.94px;">
+        <div class="max-w-[1280px] mx-auto" style="margin-left: 40px; margin-right: 40px; width: 1280px;">
+          
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+            <!-- 左栏：项目截图1 -->
+            <div class="flex flex-col gap-4" style="margin-top: 0px; padding-right: 50px; width: 411.667px; height: 564.5px;">
+              <img src="./assets/project-shot-3.png" alt="项目截图3" class="w-full object-cover rounded-lg shadow-md cursor-zoom-in transition" data-zoomable onclick="openLightbox(this.src, this.alt)">
+              <img src="./assets/project-shot-1.png" alt="项目截图1" class="w-full object-cover rounded-lg shadow-md cursor-zoom-in transition" style="border-radius: 0px; border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-left-radius: 0px; border-bottom-right-radius: 0px; margin-top: 20px;" data-zoomable onclick="openLightbox(this.src, this.alt)">
+            </div>
+            <!-- 中栏：项目说明 -->
+            <div class="flex flex-col gap-4" style="margin-top: 35px;">
+              <div>
+                <h2 class="text-[44px] md:text-[56px] font-bold leading-[1.2] tracking-tight" style="color: var(--gf-foreground); text-wrap: balance;">Project</h2>
+                <p class="text-[22px] font-semibold mt-2" style="color: var(--gf-accent-brown);">项目经历</p>
+              </div>
+              <h3 class="text-[24px] font-bold leading-[1.4]" style="color: var(--gf-foreground); width: 436.667px !important; height: 34.1875px; flex-grow: 0; flex-shrink: 0; flex-basis: auto;">Marketing Weekly——营销分析AI工具</h3>
+              <p class="text-[15px] leading-[1.8]" style="color: var(--gf-muted);">通过Vibe Coding，基于Next.js + TypeScript + Prisma + SQLite全栈架构，使用Playwright实现定时爬虫自动抓取行业案例，调用大模型API完成5维度自动分析（策略/标签/评分/洞察）。</p>
+              <p class="text-[15px] leading-[1.8]" style="color: var(--gf-muted);">完成100%前端界面与交互设计，包括Banner轮播、卡片网格、收藏功能、弹窗详情等。周均节省3+小时人工案例搜索及分析时间。</p>
+              <a href="#" class="inline-flex items-center justify-center w-14 h-14 rounded-full mt-4" style="background: var(--gf-primary); color: var(--gf-card);"><i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+            </div>
+            <!-- 右栏：项目截图2 -->
+            <div class="flex flex-col gap-4">
+              <img src="./assets/project-shot-2.png" alt="项目截图2" class="w-full object-cover rounded-lg shadow-md cursor-zoom-in transition" style="padding-left: 50px; box-shadow: none;" data-zoomable onclick="openLightbox(this.src, this.alt)">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ NEWS ============ -->
+      <section id="news" class="py-20 px-8 md:px-10" style="background: transparent; width: 1433px; height: 2478px;">
+        <!-- Portfolio Header -->
+        <div class="max-w-[1280px] mx-auto" style="margin-left: 40px; margin-right: 40px; width: 1269px;">
+          <div class="mb-10" style="padding-top: 0px; width: 1270px; height: 210px; margin-bottom: 30px;">
+            <h2 class="text-[44px] md:text-[56px] font-bold leading-[1.2] tracking-tight" style="color: var(--gf-foreground); text-wrap: balance;">Portfolio</h2>
+            <p class="text-[22px] font-semibold mt-2" style="color: var(--gf-accent-brown); height: 1px;">作品集（点击卡片查看作品内容）</p>
+            <a href="#" class="inline-flex items-center justify-center w-14 h-14 rounded-full mt-10" style="background: var(--gf-primary); color: var(--gf-card); margin-top: 65px;"><i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+          </div>
+        </div>
+
+        <!-- ============ 策划 (3 cards, 2x2 grid) ============ -->
+        <div class="max-w-[1280px] mx-auto" style="margin-left: 40px; margin-right: 40px; width: 1269px;">
+          <div class="mb-6" style="margin-top: 20px;">
+            <h3 class="text-[20px] font-bold" style="color: var(--gf-foreground);">策划</h3>
+          </div>
+          <div class="gap-6" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));">
+            <a href="./assets/中国广电5G书亦烧仙草联名策划.pdf" target="_blank" class="p-7 rounded-lg flex flex-col group transition hover:opacity-90" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 610px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">策划案</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">品牌联名</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">中国广电5G &amp; 书亦烧仙草联名策划</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">中国广电5G与书亦烧仙草跨品牌联名策划，结合通信与新茶饮消费场景，打造品牌联合营销方案，实现用户互导与品牌势能叠加。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+            <a href="./assets/蝴蝶与乌托邦展览策划.pdf" target="_blank" class="p-7 rounded-lg flex flex-col group transition hover:opacity-90" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 610px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">策划案</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">展览策划</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">“蝴蝶与乌托邦”赛博蝴蝶创意标本展览策划</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">湖南师范大学历史文化学院赛博朋克美学蝴蝶标本创意展览策划，融入全息投影、数字装备等科技元素，探索反乌托邦意识与蝴蝶效应的哲学思考。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+            <a href="./assets/笑哈哈哈深度植入思考.pdf" target="_blank" class="p-7 rounded-lg flex flex-col group transition hover:opacity-90" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 610px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">策划案</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">品牌策划</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">《笑哈哈哈》深度植入策划</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">中国广电5G作为《笑哈哈哈》特约合作伙伴的品牌深度植入策划，从主题植入、环节植入、话题植入三个方向进行品牌曝光与产品转化。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ============ 撰稿 (3 cards) ============ -->
+        <div class="max-w-[1280px] mx-auto" style="margin-left: 40px; margin-right: 40px; width: 1269px;">
+          <div class="mb-6" style="margin-top: 40px;">
+            <h3 class="text-[20px] font-bold" style="color: var(--gf-foreground);">撰稿</h3>
+          </div>
+          <div class="gap-6" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));">
+            <a href="./assets/惠普商用媒体分享会.pdf" target="_blank" class="p-7 rounded-lg flex flex-col group transition hover:opacity-90" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 400px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">撰稿</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">采访稿</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">引领未来工作——惠普商用媒体分享会</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">惠普面向中国市场推出新一代商用AI产品及解决方案矩阵，十家媒体围绕企业AI战略与个人生产力、企业级部署、全域协作三层落地路径展开深度采访。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+            <a href="./assets/ChinaDaily_PaulMoody采访.pdf" target="_blank" class="p-7 rounded-lg flex flex-col group transition hover:opacity-90" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 400px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">撰稿</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">双语采访稿</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">China Daily &amp; Paul Moody Written Interview</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">China Daily与CFA协会Paul Moody的书面采访，探讨"十五五"时期中国金融业高质量发展前景，涵盖绿色金融、科技金融与复合型人才需求。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+            <a href="./assets/惠普2025可持续发展报告.pdf" target="_blank" class="p-7 rounded-lg flex flex-col group transition hover:opacity-90" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 400px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">撰稿</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">新闻稿</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">惠普发布2025可持续发展报告：AI与绿色同行，打造韧性未来工作</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">惠普连续第25年发布可持续发展报告，围绕赋能客户、价值链绿色转型与社会影响力三大支柱，依托AI与循环技术打造韧性未来工作生态。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ============ 设计 (2 cards, horizontal) ============ -->
+        <div class="max-w-[1280px] mx-auto" style="margin-left: 40px; margin-right: 40px; width: 1269px;">
+          <div class="mb-6" style="margin-top: 40px;">
+            <h3 class="text-[20px] font-bold" style="color: var(--gf-foreground);">设计</h3>
+          </div>
+          <div class="gap-6" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr));">
+            <a href="javascript:void(0)" onclick="openSwipeViewer(['./assets/海报设计1.jpg','./assets/海报设计2.jpg'])" class="p-6 rounded-lg flex flex-col group transition hover:opacity-90 cursor-pointer" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 610px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">设计</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">海报设计</span>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">2张</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">视频号动态海报设计</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">独立完成中国广电视频号动态海报设计，结合品牌调性与传播热点进行视觉创意呈现。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+            <a href="javascript:void(0)" onclick="openSwipeViewer(['./assets/推文排版1.png','./assets/推文排版2.png','./assets/推文排版3.png'])" class="p-6 rounded-lg flex flex-col group transition hover:opacity-90 cursor-pointer" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 610px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">设计</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">排版设计</span>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-medium whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">3张</span>
+              </div>
+              <h3 class="text-[18px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">品牌活动推文排版设计</h3>
+              <p class="text-[14px] leading-[1.7] mt-2" style="color: var(--gf-muted);">独立完成品牌活动推文撰写与秀米排版设计，统筹视觉风格与内容结构，提升阅读体验。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- ============ 剪辑 (3 cards, horizontal) ============ -->
+        <div class="max-w-[1280px] mx-auto" style="margin-left: 40px; margin-right: 40px; width: 1269px;">
+          <div class="mb-6" style="margin-top: 40px;">
+            <h3 class="text-[20px] font-bold" style="color: var(--gf-foreground);">剪辑</h3>
+          </div>
+          <div class="gap-6" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));">
+            <a href="javascript:void(0)" onclick="openSwipeViewer(['./assets/惠普可持续发展报告视频.jpg'])" class="p-6 rounded-lg flex flex-col group transition hover:opacity-90 cursor-pointer" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 400px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">剪辑</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">可持续发展</span>
+              </div>
+              <h3 class="text-[16px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">惠普可持续发展报告发布视频</h3>
+              <p class="text-[13px] leading-[1.7] mt-2" style="color: var(--gf-muted);">惠普可持续发展报告发布视频剪辑，聚焦环保创新与循环经济主题，呈现企业ESG承诺与实践成果。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+            <a href="javascript:void(0)" onclick="openSwipeViewer(['./assets/FedEx小年视频.jpg'])" class="p-6 rounded-lg flex flex-col group transition hover:opacity-90 cursor-pointer" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 400px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">剪辑</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">节日营销</span>
+              </div>
+              <h3 class="text-[16px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">FedEx小年视频</h3>
+              <p class="text-[13px] leading-[1.7] mt-2" style="color: var(--gf-muted);">联邦快递小年节日营销视频剪辑，结合传统年俗元素与品牌温度，传递新春祝福与物流陪伴理念。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+            <a href="javascript:void(0)" onclick="openSwipeViewer(['./assets/FedEx华东光伏项目.jpg'])" class="p-6 rounded-lg flex flex-col group transition hover:opacity-90 cursor-pointer" style="background: var(--gf-card); box-shadow: var(--gf-shadow-card); width: 400px; height: 340px; flex-grow: 0; flex-shrink: 0; flex-basis: auto; border-radius: 0px;">
+              <div class="flex items-center gap-2 mb-4">
+                <span class="text-[13px] font-medium" style="color: var(--gf-muted);">剪辑</span>
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[12px] font-semibold whitespace-nowrap" style="background: var(--gf-badge-bg); color: var(--gf-badge-text);">绿色能源</span>
+              </div>
+              <h3 class="text-[16px] font-bold leading-[1.5] flex-1" style="color: var(--gf-foreground);">FedEx华东地区光伏项目视频</h3>
+              <p class="text-[13px] leading-[1.7] mt-2" style="color: var(--gf-muted);">联邦快递华东地区光伏项目视频剪辑，记录光伏设施建设与清洁能源应用，彰显企业绿色物流承诺。</p>
+              <div class="flex justify-end mt-4"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" aria-hidden="true" class="lucide lucide-arrow-up-right w-5 h-5" style="color: var(--gf-foreground);"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg></div>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CAREERS ============ -->
+      <section id="careers" class="py-20 px-8 md:px-10">
+        <div class="max-w-[1280px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          <div class="lg:col-span-4">
+            <h2 class="text-[44px] md:text-[56px] font-bold leading-[1.2] tracking-tight" style="color: var(--gf-foreground); text-wrap: balance;">Skills</h2>
+            <p class="text-[22px] font-semibold mt-2" style="color: var(--gf-accent-brown);">专业技能</p>
+            <div class="mt-6 space-y-5">
+              <div>
+                <h3 class="text-[17px] font-bold mb-2" style="color: var(--gf-foreground);">语言</h3>
+                <p class="text-[15px] leading-[1.8]" style="color: var(--gf-muted);">英语雅思7.0 | CET-6（598分）| 普通话二甲</p>
+              </div>
+              <div>
+                <h3 class="text-[17px] font-bold mb-2" style="color: var(--gf-foreground);">设计与办公</h3>
+                <p class="text-[15px] leading-[1.8]" style="color: var(--gf-muted);">Photoshop / Canva / 剪映 / 秀米 | Excel数据分析 / PPT方案呈现</p>
+              </div>
+              <div>
+                <h3 class="text-[17px] font-bold mb-2" style="color: var(--gf-foreground);">AI工具深度应用</h3>
+                <p class="text-[15px] leading-[1.8]" style="color: var(--gf-muted);">LLM（DeepSeek / ChatGPT） | AIGC（Kling / Midjourney / ​​NotebookLM） | Vibe Coding（Trae）</p>
+              </div>
+            </div>
+            <a href="#" class="inline-flex items-center justify-center w-14 h-14 rounded-full mt-10" style="background: var(--gf-primary); color: var(--gf-card);"><i data-lucide="arrow-right" class="w-5 h-5"></i></a>
+          </div>
+          <div class="lg:col-span-8">
+            <div id="logo-bubbles" class="relative w-full h-[360px] md:h-[560px]">
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="Photoshop" style="left: 5%; top: 5%; width: 120px; height: 120px;"><img src="./assets/logo-photoshop.png" alt="Photoshop" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="Canva" style="left: 35%; top: 5%; width: 88px; height: 88px;"><img src="./assets/logo-canva.png" alt="Canva" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="秀米" style="left: 68%; top: 8%; width: 133.062px; height: 141.302px;"><img src="./assets/logo-xiumi.png" alt="秀米" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="Office" style="left: 20%; top: 30%; width: 96px; height: 96px;"><img src="./assets/logo-office.png" alt="Office" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="ChatGPT" style="left: 48%; top: 28%; width: 130px; height: 130px;"><img src="./assets/logo-chatgpt.png" alt="ChatGPT" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="新logo2" style="left: 590.4340138746088px; top: 267.6644486366007px; right: auto; bottom: auto; width: 150px; height: 96px;"><img src="./assets/logo-new2.png" alt="新logo" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="DeepSeek" style="left: 5%; top: 55%; width: 92px; height: 92px;"><img src="./assets/logo-deepseek.png" alt="DeepSeek" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="Trae" style="left: 35%; top: 55%; width: 110px; height: 110px;"><img src="./assets/logo-trae.png" alt="Trae" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="可灵" style="left: 68%; top: 58%; width: 72px; height: 72px;"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="Midjourney" style="left: 15%; top: 80%; width: 82px; height: 82px;"><img src="./assets/logo-midjourney.png" alt="Midjourney" class="w-full h-full object-contain"></div>
+              <div class="logo-bubble absolute flex items-center justify-center cursor-pointer select-none transition-all duration-500 ease-out overflow-hidden" data-name="Kling" style="left: 45%; top: 78%; width: 116px; height: 116px;"><img src="./assets/logo-kling.png" alt="Kling" class="object-contain" style="width: 90px; height: 90px; flex-grow: 0; flex-shrink: 0; flex-basis: auto;"></div>
+            </div>
+          </div>
+        
+      </section>
+
+      <!-- ============ FOOTER ============ -->
+      <footer class="pt-16 pb-8 px-8 md:px-10" style="background: var(--gf-footer-bg); color: var(--gf-footer-text); height: 542.781px; width: 1440px;">
+        <div class="max-w-[1280px] mx-auto">
+          <a href="#" class="text-[20px] font-bold lowercase tracking-tight inline-block mb-12" style="color: var(--gf-footer-text);">廖小彬</a>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
+            <div class="flex flex-col gap-4 text-[14px] leading-[1.8]" style="color: var(--gf-footer-text);">
+              <a href="#mission" class="hover:opacity-70 transition whitespace-nowrap">个人简介</a>
+              <a href="#education" class="hover:opacity-70 transition whitespace-nowrap">教育背景</a>
+              <a href="#business" class="hover:opacity-70 transition whitespace-nowrap">实习经历</a>
+              <a href="#project" class="hover:opacity-70 transition whitespace-nowrap">项目经历</a>
+              <a href="#news" class="hover:opacity-70 transition whitespace-nowrap">作品集</a>
+              <a href="#careers" class="hover:opacity-70 transition whitespace-nowrap">专业技能</a>
+            </div>
+            <div class="flex flex-col gap-4 text-[14px] leading-[1.8]" style="color: var(--gf-footer-text);">
+              <a href="mailto:lxbn4cher@163.com" class="hover:opacity-70 transition whitespace-nowrap inline-flex items-center gap-1">邮箱：lxbn4cher@163.com <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+              <a href="tel:15116314607" class="hover:opacity-70 transition whitespace-nowrap inline-flex items-center gap-1">手机：15116314607 <i data-lucide="arrow-up-right" class="w-3 h-3"></i></a>
+              <span class="whitespace-nowrap">微信：Triple721st</span>
+              <span class="whitespace-nowrap">出生年月：2002年12月</span>
+            </div>
+            
+          </div>
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pt-8 border-t" style="border-color: color-mix(in srgb, var(--gf-footer-text) 18%, transparent);">
+            <div class="flex gap-5">
+              <a href="mailto:lxbn4cher@163.com" aria-label="Email" class="hover:opacity-70 transition"><i data-lucide="mail" class="w-5 h-5" style="color: var(--gf-footer-text);"></i></a>
+              <a href="tel:15116314607" aria-label="Phone" class="hover:opacity-70 transition"><i data-lucide="phone" class="w-5 h-5" style="color: var(--gf-footer-text);"></i></a>
+              <a href="#" aria-label="WeChat" class="hover:opacity-70 transition"><i data-lucide="message-circle" class="w-5 h-5" style="color: var(--gf-footer-text);"></i></a>
+            </div>
+            <p class="text-[14px]" style="color: var(--gf-footer-muted);">© 2026 廖小彬</p>
+          </div>
+        </div>
+      </footer>
+    </main>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      body { font-family: var(--gf-font-sans); }
+      ::selection { background: var(--gf-badge-bg); color: var(--gf-foreground); }
+    </style>
+    <script>lucide.createIcons();</script>
+
+    <!-- Lightbox for image zoom -->
+    <div id="lightbox" onclick="closeLightbox(event)" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.85);align-items:center;justify-content:center;cursor:zoom-out;">
+      <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:8px;box-shadow:0 8px 40px rgba(0,0,0,0.5);" onclick="event.stopPropagation()">
+      <button onclick="closeLightbox(event)" aria-label="关闭" style="position:absolute;top:24px;right:24px;width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,0.15);color:#fff;border:none;cursor:pointer;font-size:24px;display:flex;align-items:center;justify-content:center;">&times;</button>
+    </div>
+    <script>
+      function openLightbox(src, alt) {
+        var lb = document.getElementById('lightbox');
+        var img = document.getElementById('lightbox-img');
+        img.src = src;
+        img.alt = alt || '';
+        lb.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+      function closeLightbox(e) {
+        if (e.target.id !== 'lightbox' && e.type === 'click' && e.target.tagName !== 'BUTTON' && e.target.id !== 'lightbox') return;
+        var lb = document.getElementById('lightbox');
+        lb.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.getElementById('lightbox').style.display = 'none';
+          document.body.style.overflow = '';
+        }
+      });
+    </script>
+    <style>
+      .logo-bubble:hover {
+        transform: scale(1.6) !important;
+        z-index: 10 !important;
+        box-shadow: 0 8px 30px rgba(0,0,0,0.25) !important;
+      }
+    </style>
+    <!-- Image swipe viewer overlay -->
+    <div class="img-swipe-overlay" id="imgSwipeOverlay" onclick="if(event.target===this)closeSwipeViewer()">
+      <button class="img-swipe-close" onclick="closeSwipeViewer()">&#times;</button>
+      <button class="img-swipe-nav prev" onclick="swipePrev()">&#8249;</button>
+      <div class="img-swipe-track" id="imgSwipeTrack"></div>
+      <button class="img-swipe-nav next" onclick="swipeNext()">&#8250;</button>
+      <div class="img-swipe-dots" id="imgSwipeDots"></div>
+    </div>
+    <script>
+      function openSwipeViewer(images) {
+        var overlay = document.getElementById('imgSwipeOverlay');
+        var track = document.getElementById('imgSwipeTrack');
+        var dots = document.getElementById('imgSwipeDots');
+        track.innerHTML = '';
+        dots.innerHTML = '';
+        images.forEach(function(src, i) {
+          var img = document.createElement('img');
+          img.src = src;
+          img.onclick = function(e) { e.stopPropagation(); this.classList.toggle('zoomed'); };
+          track.appendChild(img);
+          var dot = document.createElement('span');
+          if (i === 0) dot.classList.add('active');
+          dots.appendChild(dot);
+        });
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        track.onscroll = function() {
+          var idx = Math.round(track.scrollLeft / track.offsetWidth);
+          var allDots = dots.querySelectorAll('span');
+          allDots.forEach(function(d, i) { d.classList.toggle('active', i === idx); });
+        };
+      }
+      function closeSwipeViewer() {
+        document.getElementById('imgSwipeOverlay').classList.remove('active');
+        document.body.style.overflow = '';
+      }
+      function swipePrev() {
+        var track = document.getElementById('imgSwipeTrack');
+        track.scrollBy({ left: -track.offsetWidth, behavior: 'smooth' });
+      }
+      function swipeNext() {
+        var track = document.getElementById('imgSwipeTrack');
+        track.scrollBy({ left: track.offsetWidth, behavior: 'smooth' });
+      }
+      document.addEventListener('keydown', function(e) {
+        if (!document.getElementById('imgSwipeOverlay').classList.contains('active')) return;
+        if (e.key === 'Escape') closeSwipeViewer();
+        if (e.key === 'ArrowLeft') swipePrev();
+        if (e.key === 'ArrowRight') swipeNext();
+      });
+    </script>
+</body>
+</html>
